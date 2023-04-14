@@ -18,9 +18,15 @@ export class Chat {
     ? `Answer me in ${process.env.LANGUAGE},`
     : '';
 
-    return `Bellow is the code patch, please help me do a brief code review,${answerLanguage} if any bug risk and improvement suggestion are welcome
+    const answerMessage = process.env.MESSAGE 
+    ? `${process.env.MESSAGE}, ${answerLanguage}
+    ${patch}
+    `
+    : `Bellow is the code patch, please help me do a brief code review,${answerLanguage} if any bug risk and improvement suggestion are welcome
     ${patch}
     `;
+
+    return answerMessage;
   };
 
   public codeReview = async (patch: string) => {
