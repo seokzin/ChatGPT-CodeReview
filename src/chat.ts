@@ -18,8 +18,8 @@ export class Chat {
     ? `Answer me in ${process.env.LANGUAGE},`
     : '';
 
-    const answerMessage = process.env.MESSAGE 
-    ? `${process.env.MESSAGE}, ${answerLanguage}
+    const answerMessage = process.env.message 
+    ? `${process.env.message}, ${answerLanguage}
     ${patch}
     `
     : `Bellow is the code patch, please help me do a brief code review,${answerLanguage} if any bug risk and improvement suggestion are welcome
