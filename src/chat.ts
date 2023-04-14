@@ -14,13 +14,12 @@ export class Chat {
   }
 
   private generatePrompt = (patch: string) => {
-    // const answerLanguage = process.env.LANGUAGE
-    //   ? `Answer me in japanese,`
-    //   : '';
-    const answerLanguage = 'Answer me in japanese';
+    const answerLanguage = process.env.LANGUAGE
+    ? `Answer me in ${process.env.LANGUAGE},`
+    : '';
 
     return `Bellow is the code patch, please help me do a brief code review,${answerLanguage} if any bug risk and improvement suggestion are welcome
-    ${patch}.
+    ${patch}
     `;
   };
 
